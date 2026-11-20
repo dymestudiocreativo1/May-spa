@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAY SPA — Belleza y Relajación | Tepatitlán, Jalisco</title>
+  <meta name="description" content="Cuidarte no es un lujo, es una inversión en ti... Bienestar y relajación personal en H. Garza 187 int. 4, Col. Centro, Tepatitlán de Morelos, Jalisco." />
+
+  <!-- Tipografías Editoriales y Modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            alabaster: '#FAF7F5',
+            cream: '#F3ECE8',
+            sand: '#E6DDD6',
+            orchid: {
+              50: '#FAF3F8',
+              100: '#F4E5F0',
+              200: '#E7CAE0',
+              300: '#D3A3C6',
+              400: '#B874A5',
+              500: '#9B4D82',
+              600: '#823D6C',
+              700: '#7A3566',
+              800: '#5D274D',
+              900: '#451C39',
+            },
+            sage: {
+              50: '#F2F7F5',
+              100: '#E0ECE8',
+              200: '#C3DBD3',
+              300: '#9AC0B4',
+              400: '#75A395',
+              500: '#5E8C7F',
+              600: '#496E64',
+            },
+            walnut: {
+              600: '#6E5A4F',
+              700: '#54433A',
+              800: '#3B2E27',
+              900: '#241B17',
+            }
+          },
+          animation: {
+            'marquee': 'marquee 32s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F5;
+      color: #241B17;
+      overflow-x: hidden;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .glass-nav {
+      background: rgba(250, 247, 245, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(155, 77, 130, 0.16);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(230, 221, 214, 0.95);
+    }
+
+    .text-orchid-gradient {
+      background: linear-gradient(135deg, #7A3566 0%, #9B4D82 55%, #B874A5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-orchid-gradient {
+      background: linear-gradient(135deg, #7A3566 0%, #9B4D82 60%, #B05F96 100%);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-orchid-200 selection:text-orchid-900">
+
+  <!-- ==================== 1. BARRA SUPERIOR DE CONTACTO RÁPIDO ==================== -->
+  <div class="bg-orchid-900 text-alabaster/95 text-[11px] sm:text-xs py-2 px-4 border-b border-orchid-700/50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <a href="#ubicacion" class="inline-flex items-center gap-1.5 hover:text-orchid-200 transition">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-orchid-300 shrink-0"></i>
+          <span>H. Garza 187 int. 4, Col. Centro · Tepatitlán de Morelos, Jalisco</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-4 ml-auto">
+        <a href="tel:+523786881896" class="hidden sm:inline-flex items-center gap-1 hover:text-orchid-200 transition">
+          <i data-lucide="phone" class="w-3 h-3 text-sage-300"></i>
+          <span>Tel: 378 688 1896</span>
+        </a>
+        <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%20%E2%9C%A8%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-semibold text-[#5ef096] hover:underline">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span>WhatsApp: 378 120 5472</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. NAVEGACIÓN PRINCIPAL ==================== -->
+  <header id="navbar" class="sticky top-0 z-40 py-3 px-4 sm:px-6 lg:px-10 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto glass-nav rounded-full px-4 sm:px-7 py-2.5 shadow-[0_10px_30px_rgba(122,53,102,0.08)] flex items-center justify-between">
+      
+      <!-- Logotipo Oficial SVG: MAY [Loto Geométrico] SPA -->
+      <a href="#inicio" class="flex items-center gap-2.5 group focus:outline-none" aria-label="MAY SPA Inicio">
+        <span class="font-serif tracking-[0.22em] text-lg sm:text-xl font-semibold text-orchid-700 group-hover:text-orchid-900 transition-colors">MAY</span>
+        
+        <svg class="w-9 h-9 sm:w-10 sm:h-10 transition-transform duration-500 group-hover:rotate-45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mayLotusGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+              <stop offset="0%" stop-color="#7A3566"/>
+              <stop offset="50%" stop-color="#9B4D82"/>
+              <stop offset="100%" stop-color="#C687B4"/>
+            </linearGradient>
+          </defs>
+          <polygon points="50,6 94,50 50,94 6,50" stroke="url(#mayLotusGrad)" stroke-width="3.2" fill="none"/>
+          <rect x="20" y="20" width="60" height="60" rx="4" stroke="url(#mayLotusGrad)" stroke-width="3.2" fill="none"/>
+          <ellipse cx="50" cy="50" rx="14" ry="34" stroke="url(#mayLotusGrad)" stroke-width="2.8" fill="none"/>
+          <ellipse cx="50" cy="50" rx="34" ry="14" stroke="url(#mayLotusGrad)" stroke-width="2.8" fill="none"/>
+          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(45 50 50)" stroke="url(#mayLotusGrad)" stroke-width="2.8" fill="none"/>
+          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(-45 50 50)" stroke="url(#mayLotusGrad)" stroke-width="2.8" fill="none"/>
+          <circle cx="50" cy="50" r="4.5" fill="url(#mayLotusGrad)"/>
+        </svg>
+
+        <span class="font-serif tracking-[0.22em] text-lg sm:text-xl font-semibold text-orchid-700 group-hover:text-orchid-900 transition-colors">SPA</span>
+      </a>
+
+      <!-- Enlaces Desktop -->
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-walnut-800">
+        <a href="#day-spa" class="hover:text-orchid-600 transition-colors flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-orchid-500"></i> Day Spa
+        </a>
+        <a href="#tratamientos" class="hover:text-orchid-600 transition-colors">Tratamientos</a>
+        <a href="#instalaciones" class="hover:text-orchid-600 transition-colors">Instalaciones</a>
+        <a href="#agendar" class="hover:text-orchid-600 transition-colors">Agendar Cita</a>
+        <a href="#ubicacion" class="hover:text-orchid-600 transition-colors">Ubicación</a>
+      </div>
+
+      <!-- Acciones Rápidas -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="openWhatsAppModal('Consulta General de Bienestar', 'Atención personalizada')" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb858] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full shadow-[0_6px_20px_rgba(37,211,102,0.28)] transition-all hover:-translate-y-0.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Agendar por WhatsApp</span>
+        </button>
+
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-full hover:bg-sand/50 text-walnut-900" aria-label="Abrir menú">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-nav rounded-3xl p-5 shadow-xl border border-orchid-200/70">
+      <div class="flex flex-col space-y-2 text-base font-medium text-walnut-800">
+        <a href="#day-spa" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-orchid-50 flex items-center justify-between">
+          <span>Day Spa Completo & Jacuzzi</span>
+          <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-orchid-100 text-orchid-700">$1,500 MXN</span>
+        </a>
+        <a href="#tratamientos" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-orchid-50 flex items-center justify-between">
+          <span>Carta de Tratamientos</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-orchid-500"></i>
+        </a>
+        <a href="#instalaciones" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-orchid-50 flex items-center justify-between">
+          <span>Instalaciones Reales (7 Áreas)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-orchid-500"></i>
+        </a>
+        <a href="#agendar" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-orchid-50 flex items-center justify-between">
+          <span>Configurador de Cita</span>
+          <i data-lucide="calendar" class="w-4 h-4 text-orchid-500"></i>
+        </a>
+        <a href="#ubicacion" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-orchid-50 flex items-center justify-between">
+          <span>Ubicación en Tepatitlán</span>
+          <i data-lucide="map-pin" class="w-4 h-4 text-orchid-500"></i>
+        </a>
+        <div class="pt-2 grid grid-cols-2 gap-2">
+          <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" rel="noopener" class="bg-[#25D366] text-white text-xs font-semibold py-3 px-3 rounded-2xl shadow-sm flex items-center justify-center gap-1.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>378 120 5472</span>
+          </a>
+          <a href="tel:+523786881896" class="bg-white border border-sand text-walnut-900 text-xs font-semibold py-3 px-3 rounded-2xl flex items-center justify-center gap-1.5">
+            <i data-lucide="phone" class="w-4 h-4 text-sage-600"></i>
+            <span>378 688 1896</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 3. HERO DE ALTO IMPACTO ==================== -->
+  <section id="inicio" class="relative pt-8 pb-20 lg:pt-14 lg:pb-28 overflow-hidden">
+    <!-- Resplandores Orgánicos de Fondo -->
+    <div class="absolute -top-20 -left-24 w-96 h-96 rounded-full bg-orchid-200/35 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-32 right-0 w-[28rem] h-[28rem] rounded-full bg-sage-200/35 blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Columna Izquierda: Propuesta de Valor -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-orchid-200 text-xs font-semibold text-orchid-700 shadow-2xs">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-orchid-500"></i>
+              MAY SPA · Belleza y Relajación
+            </span>
+            <a href="#ubicacion" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-50 border border-sage-200 text-xs font-semibold text-sage-600 hover:bg-sage-100 transition">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sage-500"></i>
+              H. Garza 187 int. 4 · Tepatitlán
+            </a>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-[64px] font-semibold leading-[1.06] text-walnut-900 tracking-tight">
+            Cuidarte no es un lujo, es una <span class="italic text-orchid-gradient">inversión en ti...</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-walnut-700 max-w-xl leading-relaxed">
+            Bienestar y relajación personal en el corazón de Tepatitlán de Morelos. Descubre rituales faciales, corporales y experiencias Day Spa diseñadas para renovar cuerpo y mente.
+          </p>
+
+          <!-- Botones Principales -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-1">
+            <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%20%E2%9C%A8%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Tepatitl%C3%A1n." target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1fb858] text-white font-semibold px-7 py-4 rounded-full shadow-[0_12px_28px_rgba(37,211,102,0.32)] transition-all hover:-translate-y-0.5">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Agendar Cita por WhatsApp</span>
+            </a>
+
+            <a href="#tratamientos" class="inline-flex items-center gap-2 bg-white hover:bg-orchid-50 text-walnut-900 border border-orchid-200 font-semibold px-6 py-4 rounded-full shadow-2xs transition-all hover:border-orchid-400">
+              <span>Explorar Tratamientos</span>
+              <i data-lucide="arrow-down" class="w-4 h-4 text-orchid-600"></i>
+            </a>
+          </div>
+
+          <!-- Indicadores de Confianza Verificados -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-5 pt-4 max-w-xl">
+            <a href="https://www.instagram.com/may_spa_belleza_y_relajacion/" target="_blank" rel="noopener" class="p-3.5 rounded-2xl bg-white/90 border border-sand shadow-2xs hover:border-orchid-300 transition">
+              <div class="flex items-center gap-1.5 text-orchid-600 mb-1">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+                <span class="font-serif text-xl sm:text-2xl font-bold text-walnut-900">+6.9K</span>
+              </div>
+              <p class="text-[11px] font-medium text-walnut-700 leading-tight">Seguidores en Instagram</p>
+            </a>
+
+            <div class="p-3.5 rounded-2xl bg-white/90 border border-sand shadow-2xs">
+              <div class="flex items-center gap-1.5 text-sage-600 mb-1">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span class="font-serif text-xl sm:text-2xl font-bold text-walnut-900">+4.8K</span>
+              </div>
+              <p class="text-[11px] font-medium text-walnut-700 leading-tight">Comunidad en Facebook</p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-white/90 border border-sand shadow-2xs">
+              <div class="flex items-center gap-1.5 text-orchid-600 mb-1">
+                <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                <span class="font-serif text-xl sm:text-2xl font-bold text-walnut-900">100%</span>
+              </div>
+              <p class="text-[11px] font-medium text-walnut-700 leading-tight">Atención Personalizada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Escaparate Visual con Foto Real de Recepción -->
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="glass-card rounded-[2.25rem] p-4 sm:p-5 shadow-[0_24px_60px_rgba(122,53,102,0.12)] animate-float">
+              <div class="relative rounded-[1.75rem] overflow-hidden h-72 sm:h-96 bg-cream">
+                <img src="./recepcion.jpg"
+                     onerror="smartLocalFallback(this, 'recepcion', 'Recepción Principal MAY SPA')"
+                     alt="Recepción Principal MAY SPA en Tepatitlán, Jalisco"
+                     class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-[11px] font-bold uppercase tracking-wider text-orchid-800 shadow-xs">
+                    Instalaciones Reales · Centro
+                  </span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <p class="font-serif text-2xl sm:text-3xl italic">Tu santuario en Tepatitlán</p>
+                  <p class="text-xs text-white/90 mt-0.5">Cabinas climatizadas, jacuzzi privado, cuarto de vapor y aparatología estética.</p>
+                </div>
+              </div>
+
+              <!-- Acceso Directo a Especialidades -->
+              <div class="grid grid-cols-2 gap-2.5 pt-4">
+                <button onclick="openWhatsAppModal('Day Spa Completo (Mascarilla Hidratante + Masaje Relajante + Jacuzzi)', '$1,500.00 MXN')" class="p-3 rounded-2xl bg-orchid-50 hover:bg-orchid-100 border border-orchid-200/80 text-left transition">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-orchid-700 block">Experiencia Estrella</span>
+                  <span class="font-serif text-lg font-bold text-walnut-900">Day Spa · $1,500</span>
+                </button>
+                <button onclick="openWhatsAppModal('Limpieza Facial Profunda', '$450.00 MXN')" class="p-3 rounded-2xl bg-sage-50 hover:bg-sage-100 border border-sage-200/80 text-left transition">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-sage-600 block">Cuidado Facial</span>
+                  <span class="font-serif text-lg font-bold text-walnut-900">Facial · $450</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. CINTA ANIMADA DE ESPECIALIDADES ==================== -->
+  <div class="bg-orchid-900 text-alabaster py-3.5 overflow-hidden border-y border-orchid-700/60 select-none">
+    <div class="flex whitespace-nowrap animate-marquee w-max">
+      <div class="flex items-center gap-8 px-4 text-xs sm:text-sm tracking-wider uppercase font-medium">
+        <span class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4 text-orchid-300"></i> Day Spa Completo · $1,500.00 MXN</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-orchid-300"></i> Limpieza Facial Profunda · $450.00 MXN</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="flower-2" class="w-4 h-4 text-sage-300"></i> Tratamientos Corporales y Faciales</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="heart-pulse" class="w-4 h-4 text-sage-300"></i> Recuperación Post Quirúrgica</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-orchid-200"></i> Depilación Láser</span>
+        <span class="text-orchid-400">•</span>
+      </div>
+      <div class="flex items-center gap-8 px-4 text-xs sm:text-sm tracking-wider uppercase font-medium">
+        <span class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4 text-orchid-300"></i> Day Spa Completo · $1,500.00 MXN</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-orchid-300"></i> Limpieza Facial Profunda · $450.00 MXN</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="flower-2" class="w-4 h-4 text-sage-300"></i> Tratamientos Corporales y Faciales</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="heart-pulse" class="w-4 h-4 text-sage-300"></i> Recuperación Post Quirúrgica</span>
+        <span class="text-orchid-400">•</span>
+        <span class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-orchid-200"></i> Depilación Láser</span>
+        <span class="text-orchid-400">•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. BANNER DESTACADO: DAY SPA ($1,500.00 MXN) ==================== -->
+  <section id="day-spa" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto reveal">
+    <div class="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#F4E5F0] via-[#FAF7F5] to-[#E0ECE8] border border-orchid-200/90 shadow-[0_24px_60px_rgba(122,53,102,0.12)]">
+      <div class="grid lg:grid-cols-12 items-center">
+        
+        <!-- Foto Local Real del Jacuzzi Privado (./jacuzzi.jpg) -->
+        <div class="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[430px] bg-cream">
+          <img src="./jacuzzi.jpg"
+               onerror="smartLocalFallback(this, 'jacuzzi', 'Tina de Hidromasaje & Jacuzzi MAY SPA')"
+               alt="Tina de hidromasaje y jacuzzi privado en MAY SPA Tepatitlán"
+               class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/55 via-transparent to-transparent"></div>
+          <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-md flex items-center gap-2">
+            <i data-lucide="crown" class="w-4 h-4 text-orchid-600"></i>
+            <span class="text-xs font-bold uppercase tracking-wider text-walnut-900">Experiencia Insignia</span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 glass-nav rounded-2xl p-3.5 text-xs text-walnut-900 shadow-md">
+            <p class="font-semibold flex items-center gap-1.5"><i data-lucide="bath" class="w-3.5 h-3.5 text-orchid-600"></i> Jacuzzi Privado · Instalaciones Reales</p>
+            <p class="text-walnut-700 mt-0.5">Incluye Mascarilla Hidratante + Masaje Relajante + Sesión privada en Jacuzzi.</p>
+          </div>
+        </div>
+
+        <!-- Contenido Detallado del Paquete Day Spa -->
+        <div class="lg:col-span-7 p-7 sm:p-12 lg:p-14 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 border border-orchid-200 text-xs font-bold uppercase tracking-wider text-orchid-700">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Ritual Completo de Relajación
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-walnut-900 leading-tight">
+            Day Spa <span class="italic text-orchid-600">Completo</span>
+          </h2>
+
+          <p class="text-walnut-700 text-sm sm:text-base leading-relaxed">
+            Desconéctate del estrés diario en nuestras cabinas privadas en Tepatitlán. Un recorrido diseñado para hidratar tu rostro, relajar cada músculo y sumergirte en la calma del hidromasaje con velas aromáticas.
+          </p>
+
+          <!-- Los 3 pilares incluidos -->
+          <div class="grid sm:grid-cols-3 gap-3.5">
+            <div class="bg-white/95 p-4 rounded-2xl border border-sand shadow-2xs">
+              <div class="w-9 h-9 rounded-xl bg-orchid-100 text-orchid-700 flex items-center justify-center mb-2.5">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+              </div>
+              <p class="font-semibold text-sm text-walnut-900">Mascarilla Hidratante</p>
+              <p class="text-xs text-walnut-700 mt-0.5">Nutrición profunda y luminosidad inmediata para tu rostro.</p>
+            </div>
+            <div class="bg-white/95 p-4 rounded-2xl border border-sand shadow-2xs">
+              <div class="w-9 h-9 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center mb-2.5">
+                <i data-lucide="flower-2" class="w-4 h-4"></i>
+              </div>
+              <p class="font-semibold text-sm text-walnut-900">Masaje Relajante</p>
+              <p class="text-xs text-walnut-700 mt-0.5">Maniobras envolventes con aromaterapia tibia.</p>
+            </div>
+            <div class="bg-white/95 p-4 rounded-2xl border border-sand shadow-2xs">
+              <div class="w-9 h-9 rounded-xl bg-orchid-100 text-orchid-700 flex items-center justify-center mb-2.5">
+                <i data-lucide="bath" class="w-4 h-4"></i>
+              </div>
+              <p class="font-semibold text-sm text-walnut-900">Jacuzzi Privado</p>
+              <p class="text-xs text-walnut-700 mt-0.5">Sesión íntima de hidromasaje con jets terapéuticos.</p>
+            </div>
+          </div>
+
+          <!-- Precio Oficial y Botón Directo a WhatsApp -->
+          <div class="pt-4 border-t border-orchid-200/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs uppercase tracking-wider font-semibold text-walnut-700 block">Precio Oficial</span>
+              <span class="font-serif text-4xl font-bold text-orchid-700">$1,500.00 <span class="text-sm font-sans font-normal text-walnut-700">MXN</span></span>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%20%E2%9C%A8%2C%20quiero%20reservar%20el%20paquete%20*Day%20Spa%20Completo*%20(%241%2C500.00%20MXN)%20que%20incluye%20Mascarilla%20Hidratante%2C%20Masaje%20Relajante%20y%20Jacuzzi%20privado." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb858] text-white font-semibold px-6 py-4 rounded-full shadow-lg transition hover:-translate-y-0.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Reservar Day Spa por WhatsApp</span>
+              </a>
+              <button onclick="openWhatsAppModal('Day Spa Completo (Mascarilla Hidratante + Masaje Relajante + Jacuzzi)', '$1,500.00 MXN')" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-orchid-50 text-walnut-900 border border-orchid-200 font-semibold px-5 py-4 rounded-full transition">
+                <i data-lucide="calendar" class="w-4 h-4 text-orchid-600"></i>
+                <span>Elegir Fecha</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. CATÁLOGO INTERACTIVO DE TRATAMIENTOS ==================== -->
+  <section id="tratamientos" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orchid-100 text-orchid-700 text-xs font-bold uppercase tracking-widest mb-3">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Carta Oficial de Servicios
+      </span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-walnut-900 mb-4">
+        Tratamientos diseñados para <span class="italic text-orchid-600">tu bienestar integral</span>
+      </h2>
+      <p class="text-walnut-700 text-sm sm:text-base">
+        Filtra por especialidad y solicita tu cita o cotización directamente en nuestro WhatsApp oficial (<strong>378 120 5472</strong>).
+      </p>
+    </div>
+
+    <!-- Pestañas de Filtro -->
+    <div class="flex items-center justify-start sm:justify-center gap-2.5 overflow-x-auto no-scrollbar pb-4 mb-10 reveal" id="category-tabs">
+      <button onclick="filterServices('all')" data-cat="all" class="cat-btn active shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-orchid-700 text-white shadow-md transition-all">
+        Todos (6)
+      </button>
+      <button onclick="filterServices('faciales')" data-cat="faciales" class="cat-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-white hover:bg-orchid-50 text-walnut-800 border border-sand transition-all flex items-center gap-1.5">
+        <i data-lucide="sparkles" class="w-4 h-4 text-orchid-500"></i> Faciales
+      </button>
+      <button onclick="filterServices('corporales')" data-cat="corporales" class="cat-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-white hover:bg-orchid-50 text-walnut-800 border border-sand transition-all flex items-center gap-1.5">
+        <i data-lucide="flower-2" class="w-4 h-4 text-orchid-500"></i> Corporales & Spa
+      </button>
+      <button onclick="filterServices('especializados')" data-cat="especializados" class="cat-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-white hover:bg-orchid-50 text-walnut-800 border border-sand transition-all flex items-center gap-1.5">
+        <i data-lucide="zap" class="w-4 h-4 text-sage-600"></i> Especializados
+      </button>
+    </div>
+
+    <!-- Grid Dinámico de Servicios -->
+    <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Renderizado por JavaScript -->
+    </div>
+  </section>
+
+  <!-- ==================== 7. GALERÍA CARRUSEL DE INSTALACIONES + UBICACIÓN OFICIAL ==================== -->
+  <section id="instalaciones" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto reveal">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sage-100 text-sage-600 text-xs font-bold uppercase tracking-widest mb-3">
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i> Recorrido por Nuestras Instalaciones
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-walnut-900">
+          Conoce <span class="italic text-orchid-600">MAY SPA</span> por dentro
+        </h2>
+        <p class="text-sm sm:text-base text-walnut-700 mt-2 max-w-2xl">
+          Explora las 7 áreas reales de nuestra sucursal en <strong>H. Garza 187 int. 4, Col. Centro, Tepatitlán</strong>. Haz clic en cualquier fotografía para ampliarla.
+        </p>
+      </div>
+
+      <!-- Controles Superiores del Carrusel -->
+      <div class="flex items-center gap-2.5">
+        <button id="sanctuary-autoplay-btn" onclick="toggleSanctuaryAutoplay()" class="px-4 py-2.5 rounded-full bg-white hover:bg-orchid-50 border border-sand text-xs font-semibold text-walnut-800 shadow-2xs transition flex items-center gap-1.5" aria-label="Pausar o reanudar recorrido">
+          <i id="sanctuary-autoplay-icon" data-lucide="pause" class="w-3.5 h-3.5 text-orchid-600"></i>
+          <span id="sanctuary-autoplay-text">Auto</span>
+        </button>
+        <button onclick="prevSanctuarySlide()" class="p-3 rounded-full bg-white hover:bg-orchid-50 border border-sand text-walnut-900 shadow-xs transition active:scale-95" aria-label="Área anterior">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+        <button onclick="nextSanctuarySlide()" class="p-3 rounded-full bg-orchid-700 hover:bg-orchid-800 text-white shadow-md transition active:scale-95" aria-label="Siguiente área">
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-7 items-stretch">
+      
+      <!-- Carrusel Principal de 7 Fotos Reales (8 columnas) -->
+      <div class="lg:col-span-8 flex flex-col justify-between bg-white rounded-[2.25rem] p-3.5 sm:p-5 border border-sand shadow-[0_18px_45px_rgba(36,27,23,0.06)]">
+        
+        <div id="sanctuary-stage" class="relative h-72 sm:h-[440px] rounded-[1.75rem] overflow-hidden select-none group cursor-pointer bg-cream" onclick="openCurrentSanctuaryLightbox()">
+          <img id="sanctuary-main-img"
+               src="./recepcion.jpg"
+               onerror="smartLocalFallback(this, 'recepcion', 'Recepción Principal MAY SPA')"
+               alt="Recepción Principal MAY SPA"
+               class="w-full h-full object-cover transition-all duration-500" />
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+          <!-- Contador 01/07 y Botón Ampliar -->
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+            <span id="sanctuary-badge" class="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs font-bold uppercase tracking-wider text-orchid-800 shadow-xs">
+              01 / 07 · Recepción Principal
+            </span>
+            <button type="button" onclick="event.stopPropagation(); openCurrentSanctuaryLightbox()" class="w-10 h-10 rounded-full bg-black/50 hover:bg-black/75 backdrop-blur-md text-white flex items-center justify-center transition" aria-label="Ampliar fotografía">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Flechas Laterales -->
+          <button type="button" onclick="event.stopPropagation(); prevSanctuarySlide()" class="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-walnut-900 items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition" aria-label="Anterior">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button type="button" onclick="event.stopPropagation(); nextSanctuarySlide()" class="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-walnut-900 items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition" aria-label="Siguiente">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Título y Descripción del Espacio -->
+          <div class="absolute bottom-5 left-5 right-5 text-white">
+            <h3 id="sanctuary-title" class="font-serif text-2xl sm:text-3xl font-semibold">Recepción Principal MAY SPA</h3>
+            <p id="sanctuary-desc" class="text-xs sm:text-sm text-white/90 mt-1 max-w-2xl leading-relaxed">
+              Mostrador de mármol y madera frente al muro verde menta con celosía blanca y el logotipo MAY SPA en relieve acompañado de orquídeas frescas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tira de 7 Miniaturas Clicables -->
+        <div id="sanctuary-thumbs" class="grid grid-cols-4 sm:grid-cols-7 gap-2 pt-3.5">
+          <!-- Renderizado dinámico -->
+        </div>
+      </div>
+
+      <!-- Panel Lateral de Ubicación Oficial y Contacto Directo (4 columnas) -->
+      <div id="ubicacion" class="lg:col-span-4 bg-gradient-to-b from-[#FAF3F8] via-white to-[#F2F7F5] rounded-[2.25rem] p-6 sm:p-8 border border-orchid-200/85 shadow-[0_18px_45px_rgba(122,53,102,0.08)] flex flex-col justify-between">
+        <div class="space-y-5">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orchid-100 text-orchid-800 text-[11px] font-bold uppercase tracking-wider">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-orchid-600"></i> Ubicación Oficial
+            </span>
+            <span class="text-xs font-semibold text-sage-600 flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-sage-500 animate-pulse"></span> Tepatitlán, Jal.
+            </span>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-walnut-900">
+              Visítanos en <span class="italic text-orchid-600">MAY SPA</span>
+            </h3>
+            <p class="text-xs text-walnut-700 mt-1">
+              Cuidarte no es un lujo, es una inversión en ti... Te esperamos con atención personalizada.
+            </p>
+          </div>
+
+          <!-- Dirección Exacta + Botón Copiar -->
+          <div class="p-4 rounded-2xl bg-white border border-orchid-200/70 shadow-2xs space-y-2.5">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-orchid-gradient text-white flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="navigation" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold uppercase tracking-wider text-orchid-700">Dirección Exacta</p>
+                <p class="font-semibold text-sm text-walnut-900 leading-snug mt-0.5">
+                  H. Garza 187 int. 4, Col. Centro
+                </p>
+                <p class="text-xs text-walnut-700 leading-relaxed">
+                  Tepatitlán de Morelos, Jalisco, México.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-2.5 border-t border-sand/80 flex items-center justify-between text-xs">
+              <span class="text-walnut-700 font-medium flex items-center gap-1.5">
+                <i data-lucide="calendar-check" class="w-3.5 h-3.5 text-sage-600"></i> Cita previa
+              </span>
+              <button onclick="copyAddress()" class="text-orchid-700 hover:text-orchid-900 font-semibold inline-flex items-center gap-1 px-2.5 py-1 rounded-lg hover:bg-orchid-50 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>Copiar Dirección</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Teléfonos Oficiales -->
+          <div class="space-y-2">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-walnut-700/80">Contacto Directo:</p>
+            <div class="grid grid-cols-2 gap-2.5">
+              <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%20%E2%9C%A8%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20H.%20Garza%20187%20int.%204." target="_blank" rel="noopener" class="p-3 rounded-2xl bg-white hover:bg-[#25D366]/10 border border-sand transition text-center group">
+                <span class="text-[10px] font-semibold text-walnut-700 block">WhatsApp Directo</span>
+                <span class="text-xs sm:text-sm font-bold text-[#199e4b] group-hover:underline">378 120 5472</span>
+              </a>
+              <a href="tel:+523786881896" class="p-3 rounded-2xl bg-white hover:bg-sage-50 border border-sand transition text-center group">
+                <span class="text-[10px] font-semibold text-walnut-700 block">Teléfono Fijo</span>
+                <span class="text-xs sm:text-sm font-bold text-walnut-900 group-hover:text-orchid-700">378 688 1896</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones Google Maps y WhatsApp -->
+        <div class="pt-5 mt-5 border-t border-sand space-y-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=H.+Garza+187+Tepatitlan+de+Morelos+Jalisco" target="_blank" rel="noopener" class="w-full bg-orchid-gradient hover:opacity-95 text-white text-sm font-semibold py-3.5 px-5 rounded-2xl shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="map" class="w-4 h-4"></i>
+            <span>Abrir en Google Maps</span>
+          </a>
+          <a href="https://www.instagram.com/may_spa_belleza_y_relajacion/" target="_blank" rel="noopener" class="w-full bg-white hover:bg-orchid-50 text-walnut-900 border border-sand text-xs font-semibold py-3 px-4 rounded-2xl transition flex items-center justify-center gap-2">
+            <i data-lucide="instagram" class="w-4 h-4 text-orchid-600"></i>
+            <span>@may_spa_belleza_y_relajacion</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 8. CONFIGURADOR RÁPIDO DE CITA DIRECTO A WHATSAPP ==================== -->
+  <section id="agendar" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto reveal">
+    <div class="bg-walnut-900 text-alabaster rounded-[2.5rem] p-7 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-orchid-600/25 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-sage-500/20 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Columna Izquierda -->
+        <div class="lg:col-span-5 space-y-5">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-orchid-200 text-xs font-semibold uppercase tracking-widest">
+            <i data-lucide="calendar-heart" class="w-3.5 h-3.5"></i> Reservación Directa
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold leading-tight">
+            Prepara tu cita y envíala <span class="italic text-orchid-300">en un clic</span>
+          </h2>
+          <p class="text-alabaster/80 text-sm sm:text-base leading-relaxed">
+            Selecciona el tratamiento que deseas, elige tu fecha y turno preferido, y te conectaremos directamente con nuestro WhatsApp oficial (<strong>378 120 5472</strong>) con tu mensaje listo para enviar.
+          </p>
+          <div class="pt-2 space-y-2.5 text-xs text-alabaster/80">
+            <p class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#5ef096]"></i> Sin pagos adelantados en línea ni registros complejos.</p>
+            <p class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#5ef096]"></i> Confirmación de horario directa con el equipo de MAY SPA.</p>
+            <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-orchid-300"></i> H. Garza 187 int. 4, Col. Centro, Tepatitlán, Jalisco.</p>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario Configurador -->
+        <div class="lg:col-span-7">
+          <div class="bg-alabaster text-walnut-900 rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inline-service" class="block text-xs font-bold uppercase tracking-wider text-walnut-700 mb-1.5">1. Elige tu Tratamiento</label>
+                <select id="inline-service" onchange="updateInlineWhatsAppLink()" class="w-full px-4 py-3 rounded-2xl bg-white border border-sand text-sm font-medium text-walnut-900 focus:outline-none focus:border-orchid-500">
+                  <option value="Day Spa Completo ($1,500.00 MXN)">Day Spa Completo — $1,500.00 MXN</option>
+                  <option value="Limpieza Facial Profunda ($450.00 MXN)">Limpieza Facial Profunda — $450.00 MXN</option>
+                  <option value="Tratamientos Faciales & Glow (Cotización personalizada)">Tratamientos Faciales & Glow</option>
+                  <option value="Tratamientos Corporales & Masajes (Cotización personalizada)">Tratamientos Corporales & Masajes</option>
+                  <option value="Recuperación Post Quirúrgica (Cotización personalizada)">Recuperación Post Quirúrgica</option>
+                  <option value="Depilación Láser (Cotización personalizada)">Depilación Láser</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="inline-name" class="block text-xs font-bold uppercase tracking-wider text-walnut-700 mb-1.5">2. Tu Nombre</label>
+                <input id="inline-name" oninput="updateInlineWhatsAppLink()" type="text" placeholder="Ej. Sofía Hernández" class="w-full px-4 py-3 rounded-2xl bg-white border border-sand text-sm text-walnut-900 focus:outline-none focus:border-orchid-500" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inline-date" class="block text-xs font-bold uppercase tracking-wider text-walnut-700 mb-1.5">3. Fecha Preferida</label>
+                <input id="inline-date" onchange="updateInlineWhatsAppLink()" type="date" class="w-full px-4 py-3 rounded-2xl bg-white border border-sand text-sm text-walnut-900 focus:outline-none focus:border-orchid-500" />
+              </div>
+
+              <div>
+                <label for="inline-shift" class="block text-xs font-bold uppercase tracking-wider text-walnut-700 mb-1.5">4. Turno Preferido</label>
+                <select id="inline-shift" onchange="updateInlineWhatsAppLink()" class="w-full px-4 py-3 rounded-2xl bg-white border border-sand text-sm font-medium text-walnut-900 focus:outline-none focus:border-orchid-500">
+                  <option value="Turno Mañana (10:00 AM - 2:00 PM)">Turno Mañana (10:00 AM - 2:00 PM)</option>
+                  <option value="Turno Tarde (2:00 PM - 8:00 PM)">Turno Tarde (2:00 PM - 8:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Vista Previa del Mensaje -->
+            <div class="p-4 rounded-2xl bg-orchid-50/80 border border-orchid-200/70">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-orchid-700 block mb-1">Vista previa del mensaje para WhatsApp (378 120 5472):</span>
+              <p id="inline-preview-text" class="text-xs text-walnut-800 whitespace-pre-line leading-relaxed"></p>
+            </div>
+
+            <a id="inline-wa-btn" href="https://wa.me/523781205472" target="_blank" rel="noopener" class="w-full bg-[#25D366] hover:bg-[#1fb858] text-white font-semibold py-4 px-6 rounded-2xl shadow-lg transition flex items-center justify-center gap-2.5 text-sm sm:text-base">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>Enviar Solicitud por WhatsApp Ahora</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. FOOTER ==================== -->
+  <footer class="bg-cream border-t border-sand py-12 px-4 sm:px-6 lg:px-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <span class="font-serif tracking-[0.22em] text-xl font-semibold text-orchid-700">MAY</span>
+        <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none">
+          <polygon points="50,6 94,50 50,94 6,50" stroke="#9B4D82" stroke-width="3.5" fill="none"/>
+          <rect x="20" y="20" width="60" height="60" rx="4" stroke="#9B4D82" stroke-width="3.5" fill="none"/>
+          <circle cx="50" cy="50" r="16" stroke="#7A3566" stroke-width="3" fill="none"/>
+        </svg>
+        <span class="font-serif tracking-[0.22em] text-xl font-semibold text-orchid-700">SPA</span>
+      </div>
+
+      <div class="text-center space-y-1">
+        <p class="text-xs sm:text-sm font-medium text-walnut-800">
+          “Cuidarte no es un lujo, es una inversión en ti...”
+        </p>
+        <p class="text-xs text-walnut-700">
+          H. Garza 187 int. 4, Col. Centro, Tepatitlán de Morelos, Jalisco · WhatsApp: 378 120 5472 · Tel: 378 688 1896
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/may_spa_belleza_y_relajacion/" target="_blank" rel="noopener" class="p-2.5 rounded-full bg-white hover:bg-orchid-100 text-orchid-700 border border-sand transition" aria-label="Instagram MAY SPA">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+        </a>
+        <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" rel="noopener" class="p-2.5 rounded-full bg-white hover:bg-[#25D366]/15 text-[#199e4b] border border-sand transition" aria-label="WhatsApp MAY SPA">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+        </a>
+        <a href="tel:+523786881896" class="p-2.5 rounded-full bg-white hover:bg-sage-100 text-sage-600 border border-sand transition" aria-label="Llamar MAY SPA">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 10. BOTÓN FLOTANTE DE WHATSAPP ==================== -->
+  <div class="fixed bottom-5 right-5 z-40">
+    <a href="https://wa.me/523781205472?text=Hola%20MAY%20SPA%20%E2%9C%A8%2C%20vengo%20de%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita."
+       target="_blank" rel="noopener"
+       class="flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1fb858] text-white px-5 py-3.5 rounded-full shadow-[0_12px_30px_rgba(37,211,102,0.42)] hover:scale-105 transition-all">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="text-sm font-semibold">WhatsApp · 378 120 5472</span>
+    </a>
+  </div>
+
+  <!-- ==================== 11. MODAL RÁPIDO DE RESERVA POR WHATSAPP ==================== -->
+  <div id="wa-modal-backdrop" onclick="closeWhatsAppModal()" class="fixed inset-0 bg-walnut-900/55 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div onclick="event.stopPropagation()" class="w-full max-w-md bg-alabaster rounded-[2rem] border border-orchid-200 shadow-2xl overflow-hidden">
+      <div class="p-6 bg-white border-b border-sand flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#25D366]/15 text-[#199e4b] flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl font-semibold text-walnut-900">Solicitar por WhatsApp</h3>
+            <p class="text-xs text-walnut-700">MAY SPA · H. Garza 187 int. 4, Tepatitlán</p>
+          </div>
+        </div>
+        <button onclick="closeWhatsAppModal()" class="p-2 rounded-full hover:bg-cream text-walnut-800" aria-label="Cerrar">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div class="p-3.5 rounded-2xl bg-orchid-50 border border-orchid-200/80">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-orchid-700 block">Servicio Seleccionado</span>
+          <p id="wa-selected-service" class="font-semibold text-sm text-walnut-900 mt-0.5">Day Spa Completo</p>
+          <p id="wa-selected-price" class="text-xs font-bold text-orchid-700 mt-0.5">$1,500.00 MXN</p>
+        </div>
+
+        <div>
+          <label for="wa-client-name" class="block text-xs font-semibold text-walnut-800 mb-1">Tu Nombre</label>
+          <input id="wa-client-name" type="text" placeholder="Ej. Mariana López" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-sand text-sm focus:outline-none focus:border-orchid-500" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="wa-client-date" class="block text-xs font-semibold text-walnut-800 mb-1">Fecha Tentativa</label>
+            <input id="wa-client-date" type="date" class="w-full px-3 py-2.5 rounded-xl bg-white border border-sand text-xs focus:outline-none focus:border-orchid-500" />
+          </div>
+          <div>
+            <label for="wa-client-time" class="block text-xs font-semibold text-walnut-800 mb-1">Turno</label>
+            <select id="wa-client-time" class="w-full px-3 py-2.5 rounded-xl bg-white border border-sand text-xs focus:outline-none focus:border-orchid-500">
+              <option value="Turno Mañana (10:00 AM - 2:00 PM)">Mañana</option>
+              <option value="Turno Tarde (2:00 PM - 8:00 PM)">Tarde</option>
+            </select>
+          </div>
+        </div>
+
+        <button onclick="launchWhatsAppRedirect()" class="w-full bg-[#25D366] hover:bg-[#1fb858] text-white font-semibold py-4 rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Abrir WhatsApp (378 120 5472)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 12. MODAL LIGHTBOX PARA AMPLIAR FOTOS DEL LOCAL ==================== -->
+  <div id="lightbox-modal" onclick="closeLightbox()" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div onclick="event.stopPropagation()" class="max-w-4xl w-full bg-alabaster rounded-3xl overflow-hidden shadow-2xl">
+      <div class="relative h-72 sm:h-[480px] bg-cream">
+        <img id="lightbox-img" src="" alt="Vista ampliada de MAY SPA" class="w-full h-full object-cover" />
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/65 text-white flex items-center justify-center hover:bg-black" aria-label="Cerrar vista ampliada">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h3 id="lightbox-title" class="font-serif text-2xl font-semibold text-walnut-900"></h3>
+          <p id="lightbox-desc" class="text-sm text-walnut-700 mt-1"></p>
+        </div>
+        <button onclick="closeLightbox(); openWhatsAppModal('Agendar visita en ' + document.getElementById('lightbox-title').textContent, 'Confirmar horario');" class="shrink-0 px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#1fb858] text-white text-xs font-semibold flex items-center gap-1.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Agendar en esta área</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 13. TOAST DE CONFIRMACIÓN ==================== -->
+  <div id="toast-notification" class="fixed top-24 right-5 z-50 transform translate-x-[140%] transition-transform duration-300 bg-walnut-900 text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 text-sm">
+    <i data-lucide="check-circle-2" class="w-5 h-5 text-orchid-300 shrink-0"></i>
+    <span id="toast-message">Dirección copiada al portapapeles</span>
+  </div>
+
+  <!-- ==================== LÓGICA JAVASCRIPT ==================== -->
+  <script>
+    /**
+     * Sistema Inteligente de Respaldo para las 7 Fotos Locales:
+     * 1. Intenta cargar ./nombre.jpg
+     * 2. Si no existe, prueba automáticamente ./nombre.jpeg y luego ./nombre.png
+     * 3. Si aún no se colocan las fotos en la carpeta, dibuja una ilustración SVG elegante del espacio para evitar enlaces rotos.
+     */
+    function smartLocalFallback(imgEl, baseName, titleLabel) {
+      const attempt = parseInt(imgEl.dataset.attempt || '0', 10);
+      if (attempt === 0) {
+        imgEl.dataset.attempt = '1';
+        imgEl.src = `./${baseName}.jpeg`;
+        return;
+      }
+      if (attempt === 1) {
+        imgEl.dataset.attempt = '2';
+        imgEl.src = `./${baseName}.png`;
+        return;
+      }
+
+      imgEl.onerror = null;
+      const safeTitle = (titleLabel || 'MAY SPA').replace(/[<>&'"]/g, '');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+        <defs>
+          <linearGradient id="spaGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F4E5F0"/>
+            <stop offset="50%" stop-color="#FAF7F5"/>
+            <stop offset="100%" stop-color="#E0ECE8"/>
+          </linearGradient>
+        </defs>
+        <rect width="900" height="600" fill="url(#spaGrad)"/>
+        <polygon points="450,150 515,215 450,280 385,215" fill="none" stroke="#9B4D82" stroke-width="3"/>
+        <rect x="405" y="170" width="90" height="90" rx="6" fill="none" stroke="#9B4D82" stroke-width="3"/>
+        <circle cx="450" cy="215" r="24" fill="none" stroke="#5E8C7F" stroke-width="2.5"/>
+        <text x="450" y="340" font-family="Georgia, serif" font-size="28" fill="#451C39" text-anchor="middle">${safeTitle}</text>
+        <text x="450" y="378" font-family="sans-serif" font-size="14" fill="#54433A" text-anchor="middle">Coloca el archivo "${baseName}.jpg" junto a index.html</text>
+        <text x="450" y="404" font-family="sans-serif" font-size="13" fill="#5E8C7F" text-anchor="middle">MAY SPA · H. Garza 187 int. 4, Tepatitlán, Jalisco</text>
+      </svg>`;
+      imgEl.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    function externalImgFallback(imgEl, titleLabel) {
+      imgEl.onerror = null;
+      const safeTitle = (titleLabel || 'MAY SPA').replace(/[<>&'"]/g, '');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+        <rect width="900" height="600" fill="#F4E5F0"/>
+        <text x="450" y="295" font-family="Georgia, serif" font-size="28" fill="#451C39" text-anchor="middle">${safeTitle}</text>
+        <text x="450" y="330" font-family="sans-serif" font-size="14" fill="#54433A" text-anchor="middle">MAY SPA · Belleza y Relajación</text>
+      </svg>`;
+      imgEl.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    // 1. Catálogo Oficial de 6 Tratamientos
+    const servicesData = [
+      {
+        id: 'day-spa',
+        category: 'corporales',
+        badge: 'Paquete Estrella',
+        title: 'Day Spa Completo',
+        priceLabel: '$1,500.00 MXN',
+        isLocal: true,
+        localBase: 'jacuzzi',
+        image: './jacuzzi.jpg',
+        description: 'Mascarilla hidratante, masaje relajante y sesión privada en jacuzzi con velas aromáticas en nuestras instalaciones.',
+        benefits: ['Mascarilla Hidratante', 'Masaje Relajante', 'Jacuzzi Privado']
+      },
+      {
+        id: 'limpieza-facial',
+        category: 'faciales',
+        badge: 'Precio Oficial',
+        title: 'Limpieza Facial Profunda',
+        priceLabel: '$450.00 MXN',
+        isLocal: false,
+        image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85',
+        description: 'Extracción, exfoliación, mascarilla calmante e hidratación profunda en cabina para devolver suavidad y luz a tu piel.',
+        benefits: ['Extracción y exfoliación', 'Mascarilla calmante', 'Hidratación profunda']
+      },
+      {
+        id: 'tratamientos-faciales',
+        category: 'faciales',
+        badge: 'Cuidado Avanzado',
+        title: 'Tratamientos Faciales & Glow',
+        priceLabel: 'Cotización personalizada',
+        isLocal: false,
+        image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85',
+        description: 'Hidratación intensiva, revitalización celular y cuidado antiedad adaptado exactamente a las necesidades de tu rostro.',
+        benefits: ['Hidratación intensiva', 'Revitalización celular', 'Cuidado antiedad']
+      },
+      {
+        id: 'tratamientos-corporales',
+        category: 'corporales',
+        badge: 'Bienestar Corporal',
+        title: 'Tratamientos Corporales & Masajes',
+        priceLabel: 'Cotización personalizada',
+        isLocal: false,
+        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85',
+        description: 'Masajes relajantes, descontracturantes y rituales reductivos/moldeadores con aceites esenciales y técnicas especializadas.',
+        benefits: ['Masaje relajante', 'Descontracturante', 'Reductivo y moldeador']
+      },
+      {
+        id: 'post-quirurgico',
+        category: 'especializados',
+        badge: 'Recuperación Estética',
+        title: 'Recuperación Post Quirúrgica',
+        priceLabel: 'Cotización personalizada',
+        isLocal: false,
+        image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=85',
+        description: 'Drenaje linfático especializado, ultrasonido y aparatología para desinflamar y acelerar tu recuperación estética de forma segura.',
+        benefits: ['Drenaje linfático', 'Ultrasonido y aparatología', 'Desinflamación segura']
+      },
+      {
+        id: 'depilacion-laser',
+        category: 'especializados',
+        badge: 'Tecnología Láser',
+        title: 'Depilación Láser',
+        priceLabel: 'Cotización personalizada',
+        isLocal: false,
+        image: 'https://images.pexels.com/photos/7581576/pexels-photo-7581576.jpeg?auto=compress&cs=tinysrgb&w=900',
+        description: 'Tecnología láser segura, indolora y progresiva para una piel suave y libre de vello en piernas, axilas, rostro y zonas corporales.',
+        benefits: ['Segura e indolora', 'Resultados progresivos', 'Piel suave sin irritación']
+      }
+    ];
+
+    function renderServices(category = 'all') {
+      const grid = document.getElementById('services-grid');
+      const items = category === 'all'
+        ? servicesData
+        : servicesData.filter(s => s.category === category);
+
+      grid.innerHTML = items.map(service => {
+        const errorHandler = service.isLocal
+          ? `smartLocalFallback(this, '${service.localBase}', '${service.title}')`
+          : `externalImgFallback(this, '${service.title}')`;
+
+        return `
+          <article class="group bg-white rounded-[2rem] overflow-hidden border border-sand shadow-[0_10px_30px_rgba(36,27,23,0.04)] hover:shadow-[0_20px_45px_rgba(155,77,130,0.14)] transition-all duration-500 flex flex-col justify-between">
+            <div>
+              <div class="relative h-60 overflow-hidden bg-cream">
+                <img src="${service.image}"
+                     onerror="${errorHandler}"
+                     alt="${service.title} en MAY SPA Tepatitlán"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[11px] font-bold uppercase tracking-wider text-orchid-800 shadow-2xs">
+                  ${service.badge}
+                </span>
+              </div>
+
+              <div class="p-6 pb-4">
+                <h3 class="font-serif text-2xl font-semibold text-walnut-900 group-hover:text-orchid-700 transition-colors">
+                  ${service.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-walnut-700 mt-2 leading-relaxed">
+                  ${service.description}
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  ${service.benefits.map(b => `
+                    <span class="px-2.5 py-1 rounded-lg bg-alabaster border border-sand/90 text-[11px] font-medium text-walnut-800">
+                      ${b}
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-sand/60 flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[10px] uppercase tracking-wider text-walnut-600 font-semibold block">Inversión</span>
+                <span class="font-serif text-xl font-bold text-orchid-700">${service.priceLabel}</span>
+              </div>
+
+              <button onclick="openWhatsAppModal('${service.title}', '${service.priceLabel}')" class="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1fb858] text-white text-xs font-semibold px-4 py-3 rounded-full shadow-xs transition hover:-translate-y-0.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Solicitar por WhatsApp</span>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function filterServices(category) {
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.dataset.cat === category) {
+          btn.classList.add('bg-orchid-700', 'text-white', 'shadow-md');
+          btn.classList.remove('bg-white', 'text-walnut-800', 'border', 'border-sand');
+        } else {
+          btn.classList.remove('bg-orchid-700', 'text-white', 'shadow-md');
+          btn.classList.add('bg-white', 'text-walnut-800', 'border', 'border-sand');
+        }
+      });
+      renderServices(category);
+    }
+
+    // 2. Carrusel Interactivo con las 7 Fotos Reales en Carpeta Raíz
+    const sanctuarySpaces = [
+      {
+        badge: '01 / 07 · Recepción Principal',
+        title: 'Recepción Principal MAY SPA',
+        desc: 'Mostrador de mármol y madera frente al muro verde menta con celosía blanca y el logotipo MAY SPA en relieve acompañado de orquídeas frescas.',
+        baseName: 'recepcion',
+        image: './recepcion.jpg',
+        thumbLabel: 'Recepción'
+      },
+      {
+        badge: '02 / 07 · Área de Espera',
+        title: 'Área de Espera MAY SPA',
+        desc: 'Repisas de cristal con letras luminosas MAY SPA, detalles botánicos y sillas estilo Tiffany para recibirte con calidez.',
+        baseName: 'espera',
+        image: './espera.jpg',
+        thumbLabel: 'Espera'
+      },
+      {
+        badge: '03 / 07 · Cabina de Aparatología',
+        title: 'Cabina de Aparatología y Faciales',
+        desc: 'Camilla en tonos suaves frente al muro verde menta con cuadro de suculentas y equipo facial especializado MAY SPA.',
+        baseName: 'cabina',
+        image: './cabina.jpg',
+        thumbLabel: 'Cabina'
+      },
+      {
+        badge: '04 / 07 · Tina de Hidromasaje',
+        title: 'Tina de Hidromasaje & Jacuzzi',
+        desc: 'Tina blanca de hidromasaje con jets terapéuticos y velas aromáticas lista para tu experiencia Day Spa Completo.',
+        baseName: 'jacuzzi',
+        image: './jacuzzi.jpg',
+        thumbLabel: 'Jacuzzi'
+      },
+      {
+        badge: '05 / 07 · Sala Lounge',
+        title: 'Sala Lounge de Bienvenida',
+        desc: 'Sillones color ciruela/uva, sofá gris con cojines turquesa y arreglo floral natural para relajarte antes o después de tu sesión.',
+        baseName: 'lounge',
+        image: './lounge.jpg',
+        thumbLabel: 'Lounge'
+      },
+      {
+        badge: '06 / 07 · Consultorio',
+        title: 'Consultorio de Valoración Personalizada',
+        desc: 'Escritorio blanco con cubierta de cristal y sillones blancos privados para tu valoración facial y corporal.',
+        baseName: 'consultorio',
+        image: './consultorio.jpg',
+        thumbLabel: 'Consultorio'
+      },
+      {
+        badge: '07 / 07 · Cuarto de Vapor',
+        title: 'Cuarto de Vapor & Sauna',
+        desc: 'Cabina privada recubierta en acabado tipo madera con banca ergonómica ideal para terapia térmica y relajación muscular.',
+        baseName: 'vapor',
+        image: './vapor.jpg',
+        thumbLabel: 'Vapor'
+      }
+    ];
+
+    let currentSanctuaryIdx = 0;
+    let sanctuaryAutoplay = true;
+    let sanctuaryTimer = null;
+
+    function renderSanctuaryThumbs() {
+      const container = document.getElementById('sanctuary-thumbs');
+      if (!container) return;
+      container.innerHTML = sanctuarySpaces.map((space, idx) => `
+        <button type="button" onclick="setSanctuarySlide(${idx})" class="group relative rounded-xl overflow-hidden h-14 sm:h-16 border-2 transition-all bg-cream ${idx === currentSanctuaryIdx ? 'border-orchid-600 scale-[1.03] shadow-xs' : 'border-transparent opacity-70 hover:opacity-100'}" aria-label="Ver ${space.title}">
+          <img src="${space.image}" onerror="smartLocalFallback(this, '${space.baseName}', '${space.thumbLabel}')" alt="${space.thumbLabel}" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black/40 flex items-end justify-center p-1">
+            <span class="text-[9px] sm:text-[10px] font-semibold text-white truncate">${space.thumbLabel}</span>
+          </div>
+        </button>
+      `).join('');
+    }
+
+    function setSanctuarySlide(index) {
+      currentSanctuaryIdx = (index + sanctuarySpaces.length) % sanctuarySpaces.length;
+      const space = sanctuarySpaces[currentSanctuaryIdx];
+      const imgEl = document.getElementById('sanctuary-main-img');
+      const badgeEl = document.getElementById('sanctuary-badge');
+      const titleEl = document.getElementById('sanctuary-title');
+      const descEl = document.getElementById('sanctuary-desc');
+
+      if (imgEl) {
+        imgEl.style.opacity = '0.35';
+        setTimeout(() => {
+          imgEl.dataset.attempt = '0';
+          imgEl.onerror = () => smartLocalFallback(imgEl, space.baseName, space.title);
+          imgEl.src = space.image;
+          imgEl.alt = space.title;
+          imgEl.style.opacity = '1';
+        }, 140);
+      }
+      if (badgeEl) badgeEl.textContent = space.badge;
+      if (titleEl) titleEl.textContent = space.title;
+      if (descEl) descEl.textContent = space.desc;
+
+      renderSanctuaryThumbs();
+    }
+
+    function nextSanctuarySlide() {
+      setSanctuarySlide(currentSanctuaryIdx + 1);
+    }
+
+    function prevSanctuarySlide() {
+      setSanctuarySlide(currentSanctuaryIdx - 1);
+    }
+
+    function toggleSanctuaryAutoplay() {
+      sanctuaryAutoplay = !sanctuaryAutoplay;
+      const icon = document.getElementById('sanctuary-autoplay-icon');
+      const text = document.getElementById('sanctuary-autoplay-text');
+      if (sanctuaryAutoplay) {
+        startSanctuaryAutoplay();
+        if (icon) icon.setAttribute('data-lucide', 'pause');
+        if (text) text.textContent = 'Auto';
+      } else {
+        clearInterval(sanctuaryTimer);
+        if (icon) icon.setAttribute('data-lucide', 'play');
+        if (text) text.textContent = 'Pausado';
+      }
+      lucide.createIcons();
+    }
+
+    function startSanctuaryAutoplay() {
+      clearInterval(sanctuaryTimer);
+      sanctuaryTimer = setInterval(() => {
+        if (sanctuaryAutoplay) nextSanctuarySlide();
+      }, 5000);
+    }
+
+    function openCurrentSanctuaryLightbox() {
+      const space = sanctuarySpaces[currentSanctuaryIdx];
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.dataset.attempt = '0';
+      lbImg.onerror = () => smartLocalFallback(lbImg, space.baseName, space.title);
+      lbImg.src = space.image;
+      document.getElementById('lightbox-title').textContent = space.title;
+      document.getElementById('lightbox-desc').textContent = space.desc;
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function initSanctuarySwipe() {
+      const stage = document.getElementById('sanctuary-stage');
+      if (!stage) return;
+      let startX = 0;
+      stage.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      stage.addEventListener('touchend', (e) => {
+        const diff = e.changedTouches[0].screenX - startX;
+        if (Math.abs(diff) > 45) {
+          if (diff < 0) nextSanctuarySlide();
+          else prevSanctuarySlide();
+        }
+      }, { passive: true });
+    }
+
+    // 3. Configurador Interactivo Inline (Sección #agendar)
+    function updateInlineWhatsAppLink() {
+      const service = document.getElementById('inline-service').value;
+      const name = document.getElementById('inline-name').value.trim();
+      const date = document.getElementById('inline-date').value;
+      const shift = document.getElementById('inline-shift').value;
+
+      let msg = `Hola *MAY SPA* ✨, me gustaría agendar una cita:\n\n`;
+      msg += `💆‍♀️ *Tratamiento:* ${service}\n`;
+      if (name) msg += `👤 *Nombre:* ${name}\n`;
+      if (date) msg += `📅 *Fecha preferida:* ${date}\n`;
+      msg += `⏰ *Turno:* ${shift}\n`;
+      msg += `\n📍 Sucursal: H. Garza 187 int. 4, Col. Centro, Tepatitlán, Jalisco.`;
+
+      document.getElementById('inline-preview-text').textContent = msg;
+      document.getElementById('inline-wa-btn').href = `https://wa.me/523781205472?text=${encodeURIComponent(msg)}`;
+    }
+
+    // 4. Modal Rápido desde cualquier Tarjeta
+    let activeWaService = 'Day Spa Completo';
+    let activeWaPrice = '$1,500.00 MXN';
+
+    function openWhatsAppModal(serviceName, priceLabel) {
+      activeWaService = serviceName;
+      activeWaPrice = priceLabel;
+      document.getElementById('wa-selected-service').textContent = serviceName;
+      document.getElementById('wa-selected-price').textContent = priceLabel;
+      const modal = document.getElementById('wa-modal-backdrop');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeWhatsAppModal() {
+      const modal = document.getElementById('wa-modal-backdrop');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function launchWhatsAppRedirect() {
+      const clientName = document.getElementById('wa-client-name').value.trim();
+      const clientDate = document.getElementById('wa-client-date').value;
+      const clientTime = document.getElementById('wa-client-time').value;
+
+      let msg = `Hola *MAY SPA* ✨, me gustaría solicitar información / agendar:\n\n`;
+      msg += `💆‍♀️ *Servicio:* ${activeWaService}\n`;
+      msg += `💰 *Tarifa:* ${activeWaPrice}\n`;
+      if (clientName) msg += `👤 *Nombre:* ${clientName}\n`;
+      if (clientDate) msg += `📅 *Fecha tentativa:* ${clientDate}\n`;
+      msg += `⏰ *Turno:* ${clientTime}\n`;
+      msg += `\n📍 Sucursal: H. Garza 187 int. 4, Col. Centro, Tepatitlán, Jalisco.`;
+
+      window.open(`https://wa.me/523781205472?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      closeWhatsAppModal();
+    }
+
+    // 5. Utilidades: Menú Móvil, Copiar Dirección, Toast
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function copyAddress() {
+      const addressText = 'MAY SPA — H. Garza 187 int. 4, Col. Centro, Tepatitlán de Morelos, Jalisco, México.';
+      const tempInput = document.createElement('input');
+      tempInput.value = addressText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast('Dirección copiada: H. Garza 187 int. 4, Col. Centro');
+    }
+
+    let toastTimeout;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      document.getElementById('toast-message').textContent = msg;
+      toast.classList.remove('translate-x-[140%]');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-x-[140%]');
+      }, 3200);
+    }
+
+    // Inicialización al Cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      renderServices('all');
+      setSanctuarySlide(0);
+      startSanctuaryAutoplay();
+      initSanctuarySwipe();
+      updateInlineWhatsAppLink();
+      lucide.createIcons();
+
+      const today = new Date().toISOString().split('T')[0];
+      const d1 = document.getElementById('wa-client-date');
+      const d2 = document.getElementById('inline-date');
+      if (d1) d1.min = today;
+      if (d2) d2.min = today;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
